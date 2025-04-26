@@ -13,7 +13,7 @@ const EmployeeList = () => {
         const fetchEmployees = async () => {
             setEmployeeLoading(true)
             try {
-                const response = await axios.get('http://localhost:5000/api/employee', {
+                const response = await axios.get('https://employee-ms-backend-silk.vercel.app/api/employee', {
                     headers: {
                         "Authorization" : `Bearer ${localStorage.getItem('token')}` 
                     }
@@ -24,7 +24,7 @@ const EmployeeList = () => {
                         {
                             _id: employee._id,
                             sno: sno++,
-                            profileImage: <img width={40} className="rounded-full" src={`http://localhost:5000/${employee.userId.profileImage}`}/>,
+                            profileImage: <img width={40} className="rounded-full" src={`https://employee-ms-backend-silk.vercel.app/${employee.userId.profileImage}`}/>,
                             name: employee.userId.name,
                             dob: new Date(employee.dob).toLocaleDateString(),
                             department_name: employee.department.department_name,

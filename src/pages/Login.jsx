@@ -13,7 +13,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = axios.post("http://localhost:5000/api/auth/login", {email, password});
+      const response = axios.post("https://employee-ms-backend-silk.vercel.app/api/auth/login", {email, password});
       if((await response).data.success) {
         login((await response).data.user)
         localStorage.setItem("token", (await response).data.token)

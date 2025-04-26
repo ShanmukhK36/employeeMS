@@ -25,7 +25,7 @@ const Setting = () => {
             setError("password not match");
         } else {
             try {
-                const response = await axios.put("http://localhost:5000/api/setting/change-password", setting, 
+                const response = await axios.put("https://employee-ms-backend-silk.vercel.app/api/setting/change-password", setting, 
                     {
                         headers : {
                             "Authorization" : `Bearer ${localStorage.getItem('token')}`,
